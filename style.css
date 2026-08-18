@@ -88,7 +88,7 @@ body {
 }
 
 .nav-submenu {
-  display: none;
+  display: flex;
   position: absolute;
   top: 100%;
   left: 0;
@@ -99,11 +99,18 @@ body {
   border: 1px solid #f0f0f0;
   white-space: nowrap;
   z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease 0.3s, transform 0.2s ease 0.3s, visibility 0s linear 0.3s;
 }
 
 .nav-dropdown:hover .nav-submenu,
 .nav-dropdown:focus-within .nav-submenu {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.2s ease 0s, transform 0.2s ease 0s, visibility 0s linear 0s;
 }
 
 .nav-submenu a {
@@ -185,10 +192,13 @@ body {
 
   .nav-submenu {
     position: static;
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
     padding: 4px 0 0 12px;
     border: none;
     background: transparent;
+    transition: none;
   }
   
   .site-title {
