@@ -75,6 +75,12 @@ body {
   color: #000;
 }
 
+.nav-menu .nav-label {
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+}
+
 /* 主内容区 */
 .main-content {
   flex: 1;
